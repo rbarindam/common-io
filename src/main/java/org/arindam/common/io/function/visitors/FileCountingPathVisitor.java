@@ -27,7 +27,7 @@ public class FileCountingPathVisitor implements CollectingPathVisitor<Long>, Noo
 		return counter.get();
 	}
 	
-	private FileVisitResult countAndContinue() {
+	FileVisitResult countAndContinue() {
 		counter.incrementAndGet();
 		return FileVisitResult.CONTINUE;
 	}
