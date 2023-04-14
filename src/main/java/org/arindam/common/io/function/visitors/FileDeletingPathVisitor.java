@@ -29,7 +29,7 @@ public class FileDeletingPathVisitor implements CollectingPathVisitor<Deleted>, 
 
 	@Override
 	public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-		return countAndContinue(dirDeleted, deleteSafe(dir));
+		return countAndContinue(dirDeleted, exc != null && deleteSafe(dir));
 	}
 
 	@Override
